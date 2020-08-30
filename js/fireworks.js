@@ -17,7 +17,7 @@ function setParticuleDirection(e) {
 
 function createParticule(e, t) {
     var a = {};
-    return a.x = e, a.y = t, a.color = colors[anime.random(0, colors.length - 1)], a.radius = anime.random(5, 20), a.endPos =
+    return a.x = e, a.y = t, a.color = colors[anime.random(0, colors.length - 1)], a.radius = anime.random(2, 15), a.endPos =
         setParticuleDirection(a), a.draw = function () {
             ctx.beginPath(), ctx.arc(a.x, a.y, a.radius, 0, 2 * Math.PI, !0), ctx.fillStyle = a.color, ctx.fill()
         }, a
@@ -25,7 +25,7 @@ function createParticule(e, t) {
 
 function createCircle(e, t) {
     var a = {};
-    return a.x = e, a.y = t, a.color = "#F00", a.radius = 0.03, a.alpha = 0.4, a.lineWidth = 4, a.draw = function () {
+    return a.x = e, a.y = t, a.color = "#F00", a.radius = 0.03, a.alpha = 0.3, a.lineWidth = 2, a.draw = function () {
         ctx.globalAlpha = a.alpha, ctx.beginPath(), ctx.arc(a.x, a.y, a.radius, 0, 2 * Math.PI, !0), ctx.lineWidth =
             a.lineWidth, ctx.strokeStyle = a.color, ctx.stroke(), ctx.globalAlpha = 1
     }, a
@@ -50,19 +50,19 @@ function animateParticules(e, t) {
             return e.endPos.y
         },
         radius: 0.1,
-        duration: anime.random(1200, 1800),
+        duration: anime.random(600, 900),
         easing: "easeOutExpo",
         update: renderParticule
     }).add({
         targets: a,
-        radius: anime.random(20, 90),
+        radius: anime.random(2, 20),
         lineWidth: 0,
         alpha: {
             value: 0,
             easing: "linear",
-            duration: anime.random(600, 800)
+            duration: anime.random(300, 400)
         },
-        duration: anime.random(1200, 1800),
+        duration: anime.random(600, 900),
         easing: "easeOutExpo",
         update: renderParticule,
         offset: 0
@@ -82,7 +82,7 @@ function debounce(e, t) {
 var canvasEl = document.querySelector(".fireworks");
 if (canvasEl) {
     var ctx = canvasEl.getContext("2d"),
-        numberOfParticules = 30,
+        numberOfParticules = 20,
         pointerX = 0,
         pointerY = 0,
         tap = "mousedown",
@@ -130,7 +130,7 @@ function createParticule(e, t) {
 
 function createCircle(e, t) {
     var a = {};
-    return a.x = e, a.y = t, a.color = "#F00", a.radius = 0.1, a.alpha = 0.5, a.lineWidth = 6, a.draw = function () {
+    return a.x = e, a.y = t, a.color = "#F00", a.radius = 0.03, a.alpha = 0.2, a.lineWidth = 3, a.draw = function () {
         ctx.globalAlpha = a.alpha, ctx.beginPath(), ctx.arc(a.x, a.y, a.radius, 0, 2 * Math.PI, !0), ctx.lineWidth =
             a.lineWidth, ctx.strokeStyle = a.color, ctx.stroke(), ctx.globalAlpha = 1
     }, a
@@ -155,19 +155,19 @@ function animateParticules(e, t) {
             return e.endPos.y
         },
         radius: 0.1,
-        duration: anime.random(1200, 1800),
+        duration: anime.random(600, 900),
         easing: "easeOutExpo",
         update: renderParticule
     }).add({
         targets: a,
-        radius: anime.random(80, 160),
+        radius: anime.random(40, 80),
         lineWidth: 0,
         alpha: {
             value: 0,
             easing: "linear",
-            duration: anime.random(600, 800)
+            duration: anime.random(300, 500)
         },
-        duration: anime.random(1200, 1800),
+        duration: anime.random(1000, 1500),
         easing: "easeOutExpo",
         update: renderParticule,
         offset: 0
