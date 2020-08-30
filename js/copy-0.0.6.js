@@ -8,7 +8,7 @@ function setClipboardText(event) {
   //     声明一个变量接收 -- 用户输入的剪切或者复制的文本转化为字符串
   var selected = window.getSelection();
   var selectedText = selected.toString().replace(/\n/g, ''); // Solve the line breaks conversion issue
-  if (selectedText.length < 20) return;
+  if (selectedText.length < 100) return;
   if (selectedText) {
     // 如果文本存在则先取消文本默认事件
     event.preventDefault();
