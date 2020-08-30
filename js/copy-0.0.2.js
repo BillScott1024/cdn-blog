@@ -1,4 +1,4 @@
-<script>
+
     function setClipboardText(event){
         // clipboardData 对象是为通过编辑菜单、快捷菜单和快捷键执行的编辑操作所保留的，也就是你复制或者剪切内容
         let clipboardData = event.clipboardData || window.clipboardData;
@@ -32,4 +32,3 @@
     contents[0].addEventListener('copy',function(e){
         setClipboardText(e);
     });
-</script>
