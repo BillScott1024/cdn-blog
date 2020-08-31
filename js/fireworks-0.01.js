@@ -17,7 +17,7 @@ function setParticuleDirection(e) {
 
 function createParticule(e, t) {
     var a = {};
-    return a.x = e, a.y = t, a.color = colors[anime.random(0, colors.length - 1)], a.radius = anime.random(2, 15), a.endPos =
+    return a.x = e, a.y = t, a.color = colors[anime.random(0, colors.length - 1)], a.radius = anime.random(2, 9), a.endPos =
         setParticuleDirection(a), a.draw = function () {
             ctx.beginPath(), ctx.arc(a.x, a.y, a.radius, 0, 2 * Math.PI, !0), ctx.fillStyle = a.color, ctx.fill()
         }, a
