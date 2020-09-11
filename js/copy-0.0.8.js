@@ -33,7 +33,6 @@ function setClipboardText(event) {
 (function ($) {
     var contents = document.getElementsByClassName("article-entry");
     // 监听文章内容的copy事件
-    console.log("===contents", contents);
     if (contents && contents[0]) {
         contents[0].addEventListener('copy', function (e) {
             setClipboardText(e);
